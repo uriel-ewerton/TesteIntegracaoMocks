@@ -19,7 +19,7 @@ public class Campeonato {
 
     @OneToMany(mappedBy = "campeonato", cascade = CascadeType.ALL)
     private List<Partida> partidas;
-    public Campeonato(Integer id, Integer ano, String nome, ArrayList<Time> times, ArrayList<Partida> partidas) {
+    public Campeonato(Integer id, Integer ano, String nome, List<Time> times, List<Partida> partidas) {
         this.id = id;
         this.ano = ano;
         this.nome = nome;
@@ -56,19 +56,19 @@ public class Campeonato {
         this.nome = nome;
     }
 
-    public ArrayList<Time> getTimes() {
+    public List<Time> getTimes() {
         return times;
     }
 
-    public void setTimes(ArrayList<Time> times) {
+    public void setTimes(List<Time> times) {
         this.times = times;
     }
 
-    public ArrayList<Partida> getPartidas() {
+    public List<Partida> getPartidas() {
         return partidas;
     }
 
-    public void setPartidas(ArrayList<Partida> partidas) {
+    public void setPartidas(List<Partida> partidas) {
         this.partidas = partidas;
     }
 
@@ -76,8 +76,8 @@ public class Campeonato {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Time time = (Time) o;
-        return id != null && id.equals(time.getId());
+        Campeonato campeonato = (Campeonato) o;
+        return id != null && id.equals(campeonato.getId());
     }
 
     @Override

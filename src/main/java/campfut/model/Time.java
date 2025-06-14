@@ -1,6 +1,7 @@
 package campfut.model;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +27,7 @@ public class Time {
     @ManyToOne
     private Campeonato campeonato;
 
-    public Time(Integer id, String nome, ArrayList<Jogador> jogadores, Estadio sede, ArrayList<Partida> partidasComoMandante, ArrayList<Partida> partidasComoVisitante, Campeonato campeonato) {
+    public Time(Integer id, String nome, List<Jogador> jogadores, Estadio sede, List<Partida> partidasComoMandante, List<Partida> partidasComoVisitante, Campeonato campeonato) {
         this.id = id;
         this.nome = nome;
         this.jogadores = jogadores;
@@ -56,11 +57,11 @@ public class Time {
         this.nome = nome;
     }
 
-    public ArrayList<Jogador> getJogadores() {
+    public List<Jogador> getJogadores() {
         return jogadores;
     }
 
-    public void setJogadores(ArrayList<Jogador> jogadores) {
+    public void setJogadores(List<Jogador> jogadores) {
         this.jogadores = jogadores;
     }
 
@@ -72,19 +73,19 @@ public class Time {
         this.sede = sede;
     }
 
-    public ArrayList<Partida> getPartidasComoMandante() {
+    public List<Partida> getPartidasComoMandante() {
         return partidasComoMandante;
     }
 
-    public void setPartidasComoMandante(ArrayList<Partida> partidasComoMandante) {
+    public void setPartidasComoMandante(List<Partida> partidasComoMandante) {
         this.partidasComoMandante = partidasComoMandante;
     }
 
-    public ArrayList<Partida> getPartidasComoVisitante() {
+    public List<Partida> getPartidasComoVisitante() {
         return partidasComoVisitante;
     }
 
-    public void setPartidasComoVisitante(ArrayList<Partida> partidasComoVisitante) {
+    public void setPartidasComoVisitante(List<Partida> partidasComoVisitante) {
         this.partidasComoVisitante = partidasComoVisitante;
     }
 

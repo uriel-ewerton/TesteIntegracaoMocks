@@ -5,6 +5,7 @@ import campfut.model.Partida;
 import campfut.model.Time;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TimeService {
 
@@ -37,7 +38,7 @@ public class TimeService {
     }
 
     public double getAlturaMedia(Time time) {
-        ArrayList<Jogador> jogadores = time.getJogadores();
+        List<Jogador> jogadores = time.getJogadores();
         if (jogadores == null || jogadores.isEmpty()) {
             return 0.0;
         }
