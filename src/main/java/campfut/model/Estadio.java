@@ -1,10 +1,17 @@
 package campfut.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Estadio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
     private String endereco;
 
+    @OneToOne(mappedBy = "sede")
     private Time time;
 
     public Estadio(Integer id, String nome, String endereco, Time time) {

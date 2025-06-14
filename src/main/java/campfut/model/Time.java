@@ -1,15 +1,29 @@
 package campfut.model;
 
-import java.util.ArrayList;
+import jakarta.persistence.*;
+import java.util.List;
 
+@Entity
 public class Time {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
 
-    private ArrayList<Jogador> jogadores = new ArrayList<>();
+    @OneToMany(mappedBy = "timeEmQueJoga", cascade = CascadeType.ALL)
+    private List<Jogador> jogadores;
+
+    @OneToOne
     private Estadio sede;
-    private ArrayList<Partida> partidasComoMandante;
-    private ArrayList<Partida> partidasComoVisitante;
+
+    @OneToMany(mappedBy = "timeMandante", cascade = CascadeType.ALL)
+    private List<Partida> partidasComoMandante;
+
+    @OneToMany(mappedBy = "timeVisitante", cascade = CascadeType.ALL)
+    private List<Partida> partidasComoVisitante;
+
+    @ManyToOne
     private Campeonato campeonato;
 
     public Time(Integer id, String nome, ArrayList<Jogador> jogadores, Estadio sede, ArrayList<Partida> partidasComoMandante, ArrayList<Partida> partidasComoVisitante, Campeonato campeonato) {
