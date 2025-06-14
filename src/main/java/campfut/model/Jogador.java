@@ -1,16 +1,21 @@
 package campfut.model;
 
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
 public class Jogador {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private LocalDate dataNascimento;
+
     private String nome;
     private String genero;
     private Float altura;
+    private LocalDate dataNascimento;
 
+    @ManyToOne
     private Time timeEmQueJoga;
 
     public Jogador(Integer id, LocalDate dataNascimento, String nome, String genero, Float altura, Time timeEmQueJoga) {

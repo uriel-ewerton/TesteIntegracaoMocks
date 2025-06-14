@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +30,7 @@ public class TimeTest {
     @Test
     public void deveCalcularAlturaMediaDosJogadoresCorretamente() {
         TimeService timeService = new TimeService();
-        ArrayList<Jogador> jogadores = new ArrayList<>();
+        List<Jogador> jogadores = new ArrayList<>();
         jogadores.add(new Jogador(1, null, "João", null, 1.80f, null));
         jogadores.add(new Jogador(2, null, "Pedro", null, 1.70f, null));
         jogadores.add(new Jogador(3, null, "Lucas", null, 1.90f, null));

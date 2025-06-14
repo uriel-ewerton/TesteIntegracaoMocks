@@ -1,15 +1,26 @@
 package campfut.model;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
 public class Partida {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private LocalDate data;
 
-    private Time timeVisitante;
+    @ManyToOne
     private Time timeMandante;
+
+    @ManyToOne
+    private Time timeVisitante;
+
+    @ManyToOne
     private Campeonato campeonato;
+
+    @Embedded
     private Resultado resultado;
 
     public Partida(Integer id, LocalDate data, Time timeVisitante, Time timeMandante, Campeonato campeonato, Resultado resultado) {

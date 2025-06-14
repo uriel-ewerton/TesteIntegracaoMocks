@@ -1,5 +1,8 @@
 package campfut.model;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Resultado {
     private Integer numGolsMandante;
     private Integer numGolsVisitante;
