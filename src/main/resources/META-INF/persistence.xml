@@ -7,24 +7,26 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <class>campfut.model.Campeonato</class>
+        <class>campfut.model.Estadio</class>
+        <class>campfut.model.Jogador</class>
+        <class>campfut.model.Partida</class>
+        <class>campfut.model.Time</class>
 
         <properties>
             <!-- Configuring JDBC properties -->
-            <property name="javax.persistence.jdbc.url"
+            <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:mysql://localhost/lab02?useSSL=false&amp;serverTimezone=UTC&amp;createDatabaseIfNotExist=true"/>
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="root" />
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="edijr456" />
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
 
             <!-- Hibernate properties -->
+            <property name="hibernate.archive.autodetection" value="class" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
-
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL8Dialect" />
 
         </properties>
 
@@ -39,16 +41,16 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost/lab02test?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;createDatabaseIfNotExist=true"/>
             <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
             <!-- Hibernate properties -->
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
 
             <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL8Dialect" />
+                      value="org.hibernate.dialect.MySQLDialect" />
         </properties>
     </persistence-unit>
 
