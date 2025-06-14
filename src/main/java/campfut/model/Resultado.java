@@ -15,6 +15,10 @@ public class Resultado {
         this.numGolsVisitante = numGolsVisitante;
     }
 
+    public Resultado() {
+
+    }
+
     public Integer getPontuacaoMandante() {
         // ex.: 3 pontos por vitória, 1 por empate, 0 por derrota
         if (numGolsMandante > numGolsVisitante)  return 3;

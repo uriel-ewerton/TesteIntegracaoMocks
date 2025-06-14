@@ -21,6 +21,10 @@ public class Estadio {
         this.time = time;
     }
 
+    public Estadio() {
+
+    }
+
     public Integer getId() {
         return id;
     }
